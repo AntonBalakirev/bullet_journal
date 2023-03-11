@@ -1,10 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Getting Started: Bullet Journal</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bullet Journal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<div>{{content}}</div>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="add task description">
+        <input type="text" name="status" placeholder="set task status">
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div>
+    <form method="post" action="filter">
+        <input type="text" name="status" placeholder="filter by status">
+        <button type="submit">Filter</button>
+    </form>
+</div>
+<div>Task list</div>
+{{#tasks}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{text}}</span>
+        <i>{{status}}</i>
+    </div>
+{{/tasks}}
 </body>
 </html>
